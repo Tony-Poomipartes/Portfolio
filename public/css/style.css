@@ -92,7 +92,7 @@ main {
 /* * Description */
 
 .article-presentation {
-  background-color: rgba(143, 143, 143, 0.15);
+  background-color: var(--color-theme-switch);
   border-radius: 0.5rem;
   display: flex;
   justify-content: center;
