@@ -9,19 +9,55 @@
 
 :root {
   --color-bg: #202023;
-  --color-text: #d2d2d2;
-  --color-nav: #202022;
-  --color-theme-switch: #81e6d9;
+  --color-title: #ffe59e;
+  --color-text: #ffffff;
+  --color-nav: #000000;
+  --color-footer: #868686;
+  --color-theme-switch: #ffc400;
   --color-borderBottom-article: #525252;
 }
 
 .white-theme {
   --color-bg: #ffffff;
+  --color-title: #4d3902;
   --color-text: #202023;
-  --color-nav: #c7c7c7;
-  --color-theme-switch: #525252;
+  --color-nav:#0273a9;
+  --color-footer: #0273a9;
+  --color-theme-switch: #ffc400;
   --color-borderBottom-article: #fce08c;
   transition: 0.1s linear;
+}
+
+
+.welcome-container {
+  background-image: url("../img/photo_profil.jpg");
+  /* On va demander à notre image de se dimensionner de sorte à recouvrir
+  du mieux possible l'intégralité de l'élément */
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* On utilise ici l'unité vh pour prendre 100% de la place dispo en hauteur de la zone d'affichage */
+  height: 100vh;
+  width: 40%;
+  /* On demande à l'image de bien se centrer */
+  background-position: 30% ;
+  padding: 2.5em 2em 1em;
+  /* On utilise un box-sizing pour que le padding ajouté à notre élément
+  ne s'ajoute PAS à la largeur déjà définie
+  Il va s'adapter à l'intérieur de cette largeur sans la modifier */
+  box-sizing: border-box;
+}
+
+#content-container {
+  width: 60%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  /* On choisit à nouveau 100vh (pour prendre toute la hauteur dispo)
+  auxquels on retranche la taille du header */
+  height: calc(100vh - 72px);
+  overflow: auto;
 }
 
 body {
@@ -31,7 +67,7 @@ body {
 
 main {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
 }
 
 
@@ -138,7 +174,7 @@ main {
 
 /* Article Title */
 .article {
-  width: 50%;
+  width: 70%;
   margin: 0 auto;
 }
 
@@ -149,8 +185,13 @@ main {
 
 .article-title {
   width: 8%;
-  color: var(--color-text);
+  color: var(--color-title);
       }
+
+h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+}
 
 #article-work--description {
   margin-top: 0.8rem;
@@ -216,15 +257,23 @@ main {
 }
 
 /* Article Web */
+#article-web{
+    border-radius: 0.5rem;
+  background-color: var(--color-footer);
+}
+
 #article-web--title {
   width: 120px;
   margin-top: 0.8rem;
   margin-bottom: 0.8rem;
+  font-weight: bold;
+  font-size: larger;
 }
 
 .web-link {
   display: flex;
-  flex-direction: column;
+  justify-content: space-evenly;
+  filter: drop-shadow(1px 0px 1px #ffbb00);
 }
 .web-link-linkedin {
   display: flex;
@@ -232,7 +281,6 @@ main {
 }
 .web-link-github {
   display: flex;
-  color: yellow;
   align-items: center;
 }
 .web-link-gmail {
@@ -245,14 +293,14 @@ main {
   color: var(--color-theme-switch);
   padding: 0.5rem;
   width: 30%;
-  border-radius: 0.5rem;
+  /* border-radius: 0.5rem; */
 }
 
 .web-link a:hover {
-  transition: 0.2s ease-in-out;
-  background-color: rgba(252, 210, 139, 0.4);
+  /* background-color: rgb(0, 0, 0); */
   text-decoration: black underline;
-  border-radius: 0.5rem;
+  /* border-radius: 0.5rem; */
+  transition: 9s ease-in-out;
 
 }
 
@@ -284,6 +332,7 @@ main {
   display: flex;
   flex-direction: column;
   width: 50%;
+  border: #000000 solid 1px;
 }
 
 .projects-ecommerce-title {
@@ -340,8 +389,7 @@ footer{
   width: 100%;
   padding: 3rem;
   border-radius: 0.5rem;
-  margin-top: 2rem;
-  background-color: var(--color-nav);
+  background-color:var(--color-nav);
 }
 
 footer h4 {
