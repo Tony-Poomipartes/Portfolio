@@ -9,13 +9,13 @@ const app = {
   navScrollEvent: function () {
     let lastScroll = 0;
     const body = document.body;
-    // navBar Scroll display
 
     window.addEventListener("scroll", () => {
       const currentScroll = window.pageYOffset;
 
       if (currentScroll <= 0) {
         body.classList.remove("scroll-up");
+        nav.style.transform = "translateY(0%)";
       }
       // If currentScroll for example = 0 and so is superior to the lastScroll et que le body ne contient pas le scroll-down
       if (
@@ -24,6 +24,7 @@ const app = {
       ) {
         body.classList.remove("scroll-up");
         body.classList.add("scroll-down");
+        nav.style.transform = "translateY(-100%)";
         //  If it's true, we remove the scroll up to add this scroll down
       }
 
@@ -34,6 +35,7 @@ const app = {
       ) {
         body.classList.remove("scroll-down");
         body.classList.add("scroll-up");
+        nav.style.transform = "translateY(0%)";
       }
       lastScroll = currentScroll;
     });
