@@ -7,7 +7,6 @@ const mainController = require('../controller/mainController');
 const router = express.Router();
 
 router.get('/', mainController.renderHomePage);
-
 router.get('/project', mainController.renderProjectPage);
 
 

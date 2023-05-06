@@ -322,49 +322,51 @@ h2 {
   flex-wrap: wrap;
 }
 
-.projects-e-commerce {
+.projects {
   display: flex;
   gap: 1rem;
 }
 
 
-.projects-e-commerce-details {
+.projects-details {
   display: flex;
   flex-direction: column;
-  width: 50%;
-  border: #000000 solid 1px;
+  width: 49%;
+  border: var(--color-theme-switch) solid 3px;
+  border-radius: 10px;
+  background-color: rgb(10 10 10);
+  margin-top: 10px;
 }
 
-.projects-ecommerce-title {
+.projects-title {
   margin: 1rem 0;
   display: flex;
-  color: var(--color-text);
+  color: var(--color-theme-switch);
   font-size: 1.3rem;
   justify-content: center;
   text-align: center;
   align-items: center;
 }
 
-.projects-ecommerce-description {
+.projects-description {
   color: var(--color-text);
+  margin: 10px;
 }
 
 .project-img {
   border-radius: .5rem;
   padding: 11.6rem;
-
-  margin-top: 2rem;
 }
 
-.ecommerce {
-  background: url("../img/main.png");
+.odelice {
+  background: url("../img/odelice.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .invader {
-  background: url("../img/spaceinvader.png");
+  background: url("../img/space-invader.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -410,7 +412,7 @@ footer h4 {
     display: flex;
   }
 
-  .projects-e-commerce {
+  .projects {
     display: flex;
     justify-content: center;
   }
@@ -427,7 +429,7 @@ footer h4 {
     width: 100%;
     padding: 1rem;
   }
-  .projects-e-commerce {
+  .projects {
     display: flex;
     justify-content: center;
   }
@@ -441,7 +443,7 @@ footer h4 {
   }
 }
 
-@media (min-width: 200px) and (max-width: 699px) {
+@media (min-width: 200px) and (max-width: 750px) {
   main {
     padding: 1rem;
   }
@@ -464,13 +466,13 @@ footer h4 {
   #nav #logo {
     margin-right: 0rem;
   }
-  .projects-e-commerce {
+  .projects {
     display: flex;
     justify-content: center;
     flex-direction: column;
   }
 
-  .projects-e-commerce-details {
+  .projects-details {
     width: 100%;
   }
 
@@ -516,6 +518,7 @@ footer h4 {
 
   #article-work--title {
     width: 100%;
+    color: var(--color-theme-switch);
   }
 
   .article-presentation{
@@ -548,7 +551,7 @@ footer h4 {
     color: var(--color-text);
   }
 
-  .projects-ecommerce-title {
+  .projects-title {
     margin-top: 1rem;
   }
   .border {
