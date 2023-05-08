@@ -1,6 +1,6 @@
 const app = {
 
-  //?------------ Theme selection-----------------------
+  //?------------ Color theme selection-----------------------
   themeSwitch: function () {
     const switchTheme = document.getElementById("theme-switch");
     switchTheme.addEventListener("click", () => {

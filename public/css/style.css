@@ -77,9 +77,9 @@ align-items: center;
   text-decoration: none;
 }
 
-#nav #logo {
+/* #nav #logo {
   margin-right: 10rem;
-}
+} */
 
 #nav #logo a {
   font-weight: bold;
@@ -103,6 +103,7 @@ align-items: center;
   justify-content: space-between;
   height: 20px;
   cursor: pointer;
+  margin-left: 2em;
 }
 
 .line {
@@ -110,7 +111,7 @@ align-items: center;
   height: 4px;
   border-radius: 18px;
   background-color:var(--color-text);
-  transition: all 0.3s ease-in-out;
+  transition: all 5s ease-in-out;
 }
 
 .menu {
@@ -140,7 +141,7 @@ align-items: center;
 /*?------------Color theme selection--------------------*/
 #theme-switch {
   background-color: var(--color-theme-switch);
-  margin-left: 10rem;
+  /* margin-left: 10rem; */
   border-radius: 0.5rem;
   padding: 0.8rem;
   cursor: pointer;
@@ -234,6 +235,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-left: 65px;
 }
 
 .article-title {
@@ -469,12 +471,6 @@ footer h4 {
   }
 }
 
-@media (min-width: 900px) and (max-width: 1000px) {
-  .article-presentation{
-    padding: 1.25rem 0.1rem;
-  }
-}
-
 @media (min-width: 200px) and (max-width: 899px) {
   .article_work {
     width: 100%;
@@ -499,27 +495,6 @@ footer h4 {
 
   #nav-link a {
     font-size: 22px; 
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .burger {
-    display: none;
-  }
-  
-  .menu {
-    display: flex;
-    position: relative;
-    flex-direction: row;
-    top: auto;
-    left: auto;
-    width: auto;
-    background-color: transparent;
-    padding: 0;
-  }
-  
-  .menu li {
-    margin: 0 20px;
   }
 }
 
@@ -561,7 +536,30 @@ footer h4 {
   }
 }
 
-@media (max-width: 415px) {
+/*!------------------under 900px-----------------*/
+@media screen and (min-width: 900px) {
+  .burger {
+    display: none;
+  }
+  
+  .menu {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    top: auto;
+    left: auto;
+    width: auto;
+    background-color: transparent;
+    padding: 0;
+  }
+  
+  .menu li {
+    margin: 0 20px;
+  }
+}
+
+
+@media screen and (max-width: 415px) {
   .project-img {
     padding: 6.5rem
   }
@@ -653,5 +651,11 @@ footer h4 {
 
   #nav-link  a{
     font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .welcome-container {
+    display: none;
   }
 }
