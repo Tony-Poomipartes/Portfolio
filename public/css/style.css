@@ -239,7 +239,7 @@ main {
 }
 
 .article-title {
-  width: 20%;
+  width: 30%;
   color: var(--color-title);
       }
 
@@ -499,9 +499,6 @@ footer h4 {
 }
 
 @media (min-width: 200px) and (max-width: 750px) {
-  main {
-    padding: 1rem;
-  }
 
   #article-work {
     justify-content: center;
@@ -516,7 +513,7 @@ footer h4 {
   }
 
   .article {
-    width: 100%;
+    width: 90%;
   }
   #nav #logo {
     margin-right: 0rem;
@@ -531,9 +528,6 @@ footer h4 {
     width: 100%;
   }
 
-  #theme-switch {
-    margin-left: 2rem;
-  }
 }
 
 /*!------------------under 900px-----------------*/
@@ -574,7 +568,7 @@ footer h4 {
   }
 
   #theme-switch {
-    padding: 0.2rem
+    padding: 0.5rem;
   }
 
   .article-title {
@@ -657,5 +651,27 @@ footer h4 {
 @media screen and (max-width: 300px) {
   .welcome-container {
     display: none;
+  }
+
+   #logo a {
+    margin-right: 0rem;
+  }
+
+  .burger {
+    margin-left: 0em;
+  }
+
+  .web-link{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .web-link-github,.web-link-gmail, .web-link-linkedin {
+    display: block;
+  }
+
+  .web-link-gmail{
+    margin-bottom: 8px;
   }
 }
