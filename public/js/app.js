@@ -1,4 +1,6 @@
 const app = {
+
+  //?------------ Theme selection-----------------------
   themeSwitch: function () {
     const switchTheme = document.getElementById("theme-switch");
     switchTheme.addEventListener("click", () => {
@@ -6,6 +8,7 @@ const app = {
     });
   },
 
+  //?----------- Scroll event on the nav bar---------
   navScrollEvent: function () {
     let lastScroll = 0;
     const body = document.body;
@@ -17,7 +20,7 @@ const app = {
         body.classList.remove("scroll-up");
         nav.style.transform = "translateY(0%)";
       }
-      // If currentScroll for example = 0 and so is superior to the lastScroll et que le body ne contient pas le scroll-down
+
       if (
         currentScroll > lastScroll &&
         !body.classList.contains("scroll-down")
@@ -25,10 +28,9 @@ const app = {
         body.classList.remove("scroll-up");
         body.classList.add("scroll-down");
         nav.style.transform = "translateY(-100%)";
-        //  If it's true, we remove the scroll up to add this scroll down
       }
 
-      // We now want to add the reverse effect, (mean to see the navBar again by scrolling up)
+
       if (
         currentScroll < lastScroll &&
         body.classList.contains("scroll-down")
@@ -40,9 +42,20 @@ const app = {
       lastScroll = currentScroll;
     });
   },
+
+  //?---------------- drop-down menu ---------------------
+  menuBurger: function () {
+    const burger = document.querySelector('.burger');
+    const menu = document.querySelector('.menu');
+    
+    burger.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
+  },
 };
 
 function init() {
+  app.menuBurger();
   app.themeSwitch();
   app.navScrollEvent();
 }

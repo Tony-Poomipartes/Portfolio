@@ -15,6 +15,7 @@
   --color-footer: #868686;
   --color-theme-switch: #ffc400;
   --color-borderBottom-article: #525252;
+  transition: 0.5s ease;
 }
 
 .white-theme {
@@ -25,7 +26,7 @@
   --color-footer: #0273a9;
   --color-theme-switch: #ffc400;
   --color-borderBottom-article: #fce08c;
-  transition: 0.1s linear;
+  transition: 0.5s ease;
 }
 
 /*?--------affiche la photo de profil--------------------*/
@@ -36,19 +37,10 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
-  width: 40%;
+  width: 50%;
   background-position: 30% ;
   padding: 2.5em 2em 1em;
   box-sizing: border-box;
-}
-
-#content-container {
-  width: 60%;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  height: calc(100vh - 72px);
-  overflow: auto;
 }
 
 body {
@@ -57,7 +49,7 @@ body {
 }
 
 
-/*?------ Nav Bar Style ------------- */
+/*?------------- Nav Bar Style --------------------------- */
 
 #nav {
   background-color: var(--color-nav);
@@ -74,6 +66,12 @@ body {
   align-items: center;
 }
 
+#nav-link  {
+  display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
 #nav a {
   color: var(--color-text);
   text-decoration: none;
@@ -85,14 +83,12 @@ body {
 
 #nav #logo a {
   font-weight: bold;
-  font-size: 22px;
+  font-size: 30px;
 }
 
-
 #nav-link a {
-  font-size: 22px;
+  font-size: 30px;
   padding: 0 0.5rem;
-  position: relative; 
 }
 
 #nav-link a:hover {
@@ -100,6 +96,48 @@ body {
   transition: border-bottom 1s ease; 
 }
 
+/*?------------drop-down menu --------------------*/
+.burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20px;
+  cursor: pointer;
+}
+
+.line {
+  width: 25px;
+  height: 4px;
+  border-radius: 18px;
+  background-color:var(--color-text);
+  transition: all 0.3s ease-in-out;
+}
+
+.menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-nav);
+  padding: 20px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu.active {
+  display: flex;
+}
+
+.menu li {
+  margin: 10px 0;
+}
+
+.menu li a {
+  text-decoration: none;
+}
+
+/*?------------Color theme selection--------------------*/
 #theme-switch {
   background-color: var(--color-theme-switch);
   margin-left: 10rem;
@@ -113,7 +151,7 @@ body {
   display: flex;
   flex-grow: 1;
 }
-/*?----------nav Scroll Event ----------*/
+/*?----------nav Scroll Event ----------------------------*/
 nav {
   position: fixed;
   top: 0;
@@ -136,8 +174,8 @@ main {
   display: flex;
   margin-top: 70px;
 }
-/*?----------- Description ----------------------*/
 
+/*?----------- Description ------------------------------------*/
 .article-presentation {
   background-color: var(--color-theme-switch);
   border-radius: 0.5rem;
@@ -181,9 +219,7 @@ main {
   margin-bottom: 0.2rem;
 }
 
-/* * Article Work */
-
-/* Article Title */
+/*?------------Articles content-----------------------------*/
 .article {
   width: 70%;
   margin: 0 auto;
@@ -192,11 +228,16 @@ main {
 #article-work {
   display: flex;
   flex-direction: column;
+}
+
+#project-title {
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
 .article-title {
-  width: 8%;
+  width: 20%;
   color: var(--color-title);
       }
 
@@ -320,8 +361,8 @@ h2 {
   width : 40px;
   drop-shadow:2px ,2px, 2px, #d2d2d2;
 }
-/* ------------------ WORKS */
 
+/* ?------------------ projects------------------------------- */
 .article_work {
   width: 50%;
   margin: 0 auto;
@@ -330,14 +371,11 @@ h2 {
 .projects {
   display: flex;
   width: 100%;
-
   flex-wrap: wrap;
-}
-
-.projects {
-  display: flex;
+  justify-content: center;
   gap: 1rem;
 }
+
 
 
 .projects-details {
@@ -346,7 +384,7 @@ h2 {
   width: 49%;
   border: var(--color-theme-switch) solid 3px;
   border-radius: 10px;
-  background-color: rgb(10 10 10);
+  background-color: var(--color-nav);
   margin-top: 10px;
 }
 
@@ -415,6 +453,7 @@ footer h4 {
   margin: auto;
 }
 
+/*!------------------------media queries--------------------------*/
 @media (min-width: 900px) and (max-width: 1500px) {
   .article_work {
     width: 100%;
@@ -452,6 +491,35 @@ footer h4 {
 
   .article-presentation{
     padding: 1.25rem
+  }
+
+  #nav #logo a {
+    font-size:22px;
+  }
+
+  #nav-link a {
+    font-size: 22px; 
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .burger {
+    display: none;
+  }
+  
+  .menu {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    top: auto;
+    left: auto;
+    width: auto;
+    background-color: transparent;
+    padding: 0;
+  }
+  
+  .menu li {
+    margin: 0 20px;
   }
 }
 
