@@ -15,5 +15,4 @@ you can use this portfolio as a template
 - put it online with netlify
 - swap the app to react
 - add more projects
-- put a hover effect on the cards projects
 - refacto + docs

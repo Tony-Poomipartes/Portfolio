@@ -1,5 +1,6 @@
 const middleware404 = (req, res) => {
-  res.status(404).render("404");
+  const context = { currentPage: "home" };
+  res.status(404).render("404", context);
 };
 
 module.exports = middleware404;

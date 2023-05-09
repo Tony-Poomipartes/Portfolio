@@ -54,7 +54,9 @@
             <ul class="menu">
               <li><a href="/">Home</a></li>
               <li><a href="/project">Works</a></li>
-              <li><a href="#article-web">Contact</a></li>
+              <% if (currentPage !== 'home') { %>
+                <li><a href="#article-web">Contact</a></li>
+              <% } %>
               <li><a href="../img/CV-Tony_Poomipartes.pdf">Resume</a></li>
               <li><div id="theme-switch">
                 <img src="../img/sun.png" alt="" />

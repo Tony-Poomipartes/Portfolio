@@ -1,6 +1,7 @@
 async function renderHomePage (req,res) {
   try {
-    res.render("home");
+    const context = { currentPage: "home" };
+    res.render("home", context);
   } catch (error) {
     res.status(404).render("404");
   }
@@ -8,7 +9,8 @@ async function renderHomePage (req,res) {
 
 async function renderProjectPage (req,res) {
   try {
-    res.render("project");
+    const context = { currentPage: "project" };
+    res.render("project", context);
   } catch (error) {
     res.status(404).render("404");
   }
