@@ -192,12 +192,6 @@ main {
   font-weight: 900;
 }
 
-.article-description {
-  width: 50%;
-  margin: 0 auto;
-  margin-bottom: 3rem;
-}
-
 .article-404 {
   background-color: var(--color-theme-switch);
   border-radius: 0.5rem;
@@ -260,6 +254,10 @@ main {
   margin-left: 65px;
 }
 
+.projects {
+  margin-top: 5px;
+}
+
 .article-title {
   width: 30%;
   color: var(--color-title);
@@ -278,6 +276,7 @@ h2 {
 
 #article-work--title {
   margin-top: 2rem;
+  margin-right: 54px
 }
 
 .article #portfolio {
@@ -301,7 +300,7 @@ h2 {
 
 /* Article Bio */
 #article-bio--title {
-  width: 5%;
+  width: 25%;
 }
 
 .bio-date {
@@ -352,7 +351,7 @@ h2 {
 .web-link {
   display: flex;
   justify-content: space-evenly;
-  filter: drop-shadow(1px 0px 1px #ffbb00);
+  filter: drop-shadow(1px 0px 0.7px #ffbb00);
 }
 .web-link-linkedin {
   display: flex;
@@ -583,10 +582,6 @@ footer{
     margin: auto;
   }
 
-  .article-description {
-    width: 100%;
-  }
-
   .article {
     width: 90%;
   }
@@ -655,10 +650,6 @@ footer{
     margin-top: 0;
   }
 
-  .article-description {
-    margin-bottom: 2rem;
-}
-
   #article-work--description {
     margin-bottom: .4rem;
   }
@@ -700,9 +691,13 @@ footer{
   #nav-link  a{
     font-size: 1rem;
   }
+
+  #content-container {
+    height: calc(90.5vh - 72px);
+  }
 }
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 350px) {
   .welcome-container {
     display: none;
   }
@@ -727,5 +722,15 @@ footer{
 
   .web-link-gmail{
     margin-bottom: 8px;
+  }
+
+  #content-container {
+    height: calc(87.5vh - 72px);
+  }
+}
+
+@media screen and (max-width: 250px){
+  #content-container {
+    height: calc(86vh - 72px);
   }
 }

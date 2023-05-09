@@ -32,38 +32,42 @@ const app = {
     //Variable to store the position of the last scroll. 
     let lastScroll = 0;
     const body = document.body;
-//Add a "scroll" event to the window. 
-    window.addEventListener("scroll", () => {
-      //get the current position of the scroll. 
-      const currentScroll = window.pageYOffset;
-//If the current position of the scroll is at the top of the page, the scroll-up class is removed from the body. We reinitializ the position of the navigation menu . 
-      if (currentScroll <= 0) {
-        body.classList.remove("scroll-up");
-        nav.style.transform = "translateY(0%)";
-      }
-//If the current position of the scroll is at the bottom of the page and the class "scroll-down" is not present on the body.
-//The "scroll-up" class is removed from the body, we add the "scroll-down" class to it and the navigation menu is moved outside the window. 
-      if (
-        currentScroll > lastScroll &&
-        !body.classList.contains("scroll-down")
-      ) {
-        body.classList.remove("scroll-up");
-        body.classList.add("scroll-down");
-        nav.style.transform = "translateY(-130%)";
-      }
-//If the current position of the scroll is at the top of the page and the scroll-down class is present on the body.
-//The "scroll-down" class is removed from the body, the "scroll-up" class is added to the body and the navigation menu is replaced at its initial position. 
-      if (
-        currentScroll < lastScroll &&
-        body.classList.contains("scroll-down")
-      ) {
-        body.classList.remove("scroll-down");
-        body.classList.add("scroll-up");
-        nav.style.transform = "translateY(0%)";
-      }
-      //The value of the position of the last scroll is updated.
-      lastScroll = currentScroll;
-    });
+    const currentPage = document.querySelector(".container").dataset.currentPage;
+    //if the current page is not "home"
+    //Add a "scroll" event to the window. 
+  if (currentPage !== "home") {
+      window.addEventListener("scroll", () => {
+        //get the current position of the scroll. 
+        const currentScroll = window.pageYOffset;
+  //If the current position of the scroll is at the top of the page, the scroll-up class is removed from the body. We reinitializ the position of the navigation menu . 
+        if (currentScroll <= 0) {
+          body.classList.remove("scroll-up");
+          nav.style.transform = "translateY(0%)";
+        }
+  //If the current position of the scroll is at the bottom of the page and the class "scroll-down" is not present on the body.
+  //The "scroll-up" class is removed from the body, we add the "scroll-down" class to it and the navigation menu is moved outside the window. 
+        if (
+          currentScroll > lastScroll &&
+          !body.classList.contains("scroll-down")
+        ) {
+          body.classList.remove("scroll-up");
+          body.classList.add("scroll-down");
+          nav.style.transform = "translateY(-130%)";
+        }
+  //If the current position of the scroll is at the top of the page and the scroll-down class is present on the body.
+  //The "scroll-down" class is removed from the body, the "scroll-up" class is added to the body and the navigation menu is replaced at its initial position. 
+        if (
+          currentScroll < lastScroll &&
+          body.classList.contains("scroll-down")
+        ) {
+          body.classList.remove("scroll-down");
+          body.classList.add("scroll-up");
+          nav.style.transform = "translateY(0%)";
+        }
+        //The value of the position of the last scroll is updated.
+        lastScroll = currentScroll;
+      });
+    }
   },
   //?================================================
   //?---------------- drop-down menu ----------------
